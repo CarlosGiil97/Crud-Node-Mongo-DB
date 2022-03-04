@@ -35,5 +35,18 @@ const crear = async () => {
     console.log(resultado)
 }
 
+const actualizar = async (id) =>{
+    const persona = await PersonaModel.updateOne({_id:id},
+        {
+            $set:{
+              
+                pais: 'España modificado'
+            }
+        }
+        )
+}
+
+
 //mostrar()
-crear()
+//crear()
+actualizar('62226dbb8e9a5f5f26b5c716')
