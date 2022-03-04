@@ -46,7 +46,14 @@ const actualizar = async (id) =>{
         )
 }
 
+const eliminar = async (id) =>{
+    const persona = await PersonaModel.deleteOne({_id:id})
+    console.log(persona)
+}
+
+
 
 //mostrar()
 //crear()
 actualizar('62226dbb8e9a5f5f26b5c716')
+eliminar('62226dbb8e9a5f5f26b5c716')
