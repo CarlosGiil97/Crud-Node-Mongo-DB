@@ -13,7 +13,7 @@ const personasSchema = mongoose.Schema({
     nombre : String,
     edad : Number,
     pais : String
-})
+},{versionKey:false})
 
 // Ahora se crea el modelo
 const PersonaModel = mongoose.model('personas',personasSchema)
@@ -25,4 +25,15 @@ const mostrar = async () => {
     console.log(personas)
 }
 
-mostrar()
+const crear = async () => {
+    const persona = new PersonaModel({
+        nombre:'Alberto',
+        edad : 25,
+        pais:'España'
+    })
+    const resultado = await persona.save()
+    console.log(resultado)
+}
+
+//mostrar()
+crear()
